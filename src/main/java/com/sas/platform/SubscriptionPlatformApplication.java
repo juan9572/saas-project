@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SubscriptionPlatformApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SubscriptionPlatformApplication.class, args);
+		SpringApplication.run(SubscriptionPlatformApplication.class, args); //TODO DEFINIR INTERFACES PARA LOS REPOSITORIOS
 	}
 
 }
