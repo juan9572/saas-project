@@ -50,6 +50,40 @@ public class Subscription {
         this.cancelAtPeriodEnd = false;
     }
 
+    public static Subscription rehydrate(
+            UUID id,
+            UUID userId,
+            UUID planId,
+            SubscriptionStatus status,
+            ZonedDateTime startDate,
+            BillingPeriod period,
+            ZonedDateTime nextBillingDate,
+            BillingCycle billingCycle,
+            Money recurringPrice,
+            ZonedDateTime gracePeriodEndsAt,
+            boolean cancelAtPeriodEnd,
+            ZonedDateTime cancelledDate
+    ) {
+        Subscription s =
+                new Subscription(
+                        id,
+                        userId,
+                        planId,
+                        startDate,
+                        period,
+                        nextBillingDate,
+                        billingCycle,
+                        recurringPrice
+                );
+
+        s.status = status;
+        s.gracePeriodEndsAt = gracePeriodEndsAt;
+        s.cancelAtPeriodEnd = cancelAtPeriodEnd;
+        s.cancelledDate = cancelledDate;
+
+        return s;
+    }
+
     public UUID getId() {
         return this.id;
     }
