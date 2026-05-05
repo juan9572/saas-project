@@ -30,6 +30,30 @@ public class Invoice {
         this.status = InvoiceStatus.OPEN;
     }
 
+    public static Invoice rehydrate(
+        UUID id,
+        UUID subscriptionId,
+        Money amount,
+        InvoiceStatus status,
+        BillingPeriod period,
+        ZonedDateTime dueDate,
+        ZonedDateTime paidAt
+    ) {
+        Invoice i = 
+            new Invoice(
+                id,
+                subscriptionId,
+                amount,
+                period,
+                dueDate
+            );
+
+        i.status = status;
+        i.paidAt = paidAt;
+
+        return i;
+    }
+
     public UUID getId() {
         return this.id;
     }
