@@ -30,6 +30,32 @@ public class Payment {
         this.status = PaymentStatus.PENDING;
     }
 
+	public static Payment rehydrate(
+        UUID id,
+        UUID invoiceId,
+        UUID paymentMethodId,
+        Money money,
+        int attempNumber,
+        PaymentStatus status,
+        ZonedDateTime processedAt,
+        UUID providerTransactionId
+    ) {
+        Payment p = 
+            new Payment(
+                id,
+                invoiceId,
+                paymentMethodId,
+                money,
+                attempNumber
+            );
+
+        p.status = status;
+        p.processedAt = processedAt;
+        p.providerTransactionId = providerTransactionId;
+
+        return p;
+	}
+
     public UUID getId() {
         return this.id;
     }
