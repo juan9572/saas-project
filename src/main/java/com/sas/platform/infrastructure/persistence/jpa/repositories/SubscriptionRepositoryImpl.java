@@ -9,6 +9,7 @@ import com.sas.platform.domain.entities.subscription.Subscription;
 import com.sas.platform.domain.repositories.SubscriptionRepository;
 import com.sas.platform.infrastructure.persistence.jpa.entities.SubscriptionJpaEntity;
 import com.sas.platform.infrastructure.persistence.jpa.mappers.SubscriptionMapper;
+import com.sas.platform.infrastructure.persistence.jpa.springdata.SpringDataSubscriptionJpaRepository;
 
 @Repository
 public class SubscriptionRepositoryImpl implements SubscriptionRepository {

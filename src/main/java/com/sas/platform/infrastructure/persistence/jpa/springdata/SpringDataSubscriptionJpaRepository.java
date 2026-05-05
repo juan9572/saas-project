@@ -1,4 +1,4 @@
-package com.sas.platform.infrastructure.persistence.jpa.repositories;
+package com.sas.platform.infrastructure.persistence.jpa.springdata;
 
 import java.util.UUID;
 
